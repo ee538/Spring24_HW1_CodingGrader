@@ -5,15 +5,42 @@
 #include "q.h"
 
 //-----------------------------------------------------------------------------s
-TEST(CanBecomeTest, TestCase1) { EXPECT_TRUE(CanBecome("abcde", "cdeab")); }
+TEST(CanBecomeTest, TestCase1) { 
+    int actual = CanBecome("abcde", "cdeab");
+    EXPECT_EQ(1, actual); 
+}
 
-TEST(CanBecomeTest, TestCase2) { EXPECT_FALSE(CanBecome("abcde", "abced")); }
+TEST(CanBecomeTest, TestCase2) {
+    int actual = CanBecome("abcde", "abced");
+    EXPECT_EQ(0, actual); 
+}
 
-TEST(CanBecomeTest, TestCase3) { EXPECT_TRUE(CanBecome("abcde", "abcde")); }
+TEST(CanBecomeTest, TestCase3) {
+    int actual = CanBecome("abcde", "abcde");
+    EXPECT_EQ(1, actual);
+}
 
-TEST(CanBecomeTest, TestCase4) { EXPECT_TRUE(CanBecome("a", "a")); }
+TEST(CanBecomeTest, TestCase4) {
+    int actual = CanBecome("a", "a");
+    EXPECT_EQ(1, actual);
+}
 
-TEST(CanBecomeTest, TestCase5) { EXPECT_FALSE(CanBecome("abcde", "abcdea")); }
-TEST(CanBecomeTest, TestCase6) { EXPECT_FALSE(CanBecome("a", "")); }
-TEST(CanBecomeTest, TestCase7) { EXPECT_FALSE(CanBecome("", "a")); }
-TEST(CanBecomeTest, TestCase8) { EXPECT_TRUE(CanBecome("", "")); }
+TEST(CanBecomeTest, TestCase5) {
+    int actual = CanBecome("abcde", "abcdea");
+    EXPECT_EQ(0, actual);
+}
+
+TEST(CanBecomeTest, TestCase6) {
+    int actual = CanBecome("a", "");
+    EXPECT_EQ(0, actual);
+}
+
+TEST(CanBecomeTest, TestCase7) {
+    int actual = CanBecome("", "a");
+    EXPECT_EQ(0, actual);
+}
+
+TEST(CanBecomeTest, TestCase8) {
+    int actual = CanBecome("", "");
+    EXPECT_EQ(1, actual);
+}
